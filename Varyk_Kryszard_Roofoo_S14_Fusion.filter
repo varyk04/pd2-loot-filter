@@ -1,7 +1,7 @@
 //	Varyk's Kryszard and Roofoo S14 Fusion: ver 14.0.0 (based on Kryszard's PD2 Loot Filter ver 13.3.2)
 //	S14 merge: Holy Grail tags/alerts from Roofoo's S14 filter (twitch.tv/roofooevazan, made with PD2 Filter Forge),
 //	new S14 maps, towns, uniques and runewords added. All other design and settings are Kryszard's.
-//	Maintained by Varyk. Strict levels: 6 = no potions (rejuvs still show), 7 = also hides flawless gems/skulls.
+//	Maintained by Varyk. Strict levels: 6 = no potions (rejuvs still show), 7 = also hides flawless gems/skulls. Strict+ = curated rare weapons and class items (see VARYK STRICTNESS RULES).
 //
 //
 //	twitch.tv/kryszard
@@ -387,6 +387,20 @@ Alias[GRAILUNI]: ((UNI !(msf OR hst OR hfh OR qf1 OR qf2 OR vip OR g33 OR d33 OR
 Alias[GRAILSET]: (SET !(ID OR (t51 OR t52 OR t53 OR t54 OR t55 OR t56 OR t57 OR t58) OR (jew !ID)) !ALLDISCOVERED)
 //Items that keep Kryszard's big GG/Uber display (they still get the [GRAIL] tag)
 Alias[KRYZBIG]: (PD2UBERUNI1 OR PD2UBERUNI2 OR PD2GGUNIETH1 OR PD2GGUNI1 OR LODGGUNIETH1 OR LODGGUNI1)
+
+//VARYK STRICTNESS RULES (S14 Fusion) - base lists, all difficulties of each line
+Alias[VKCLASSILVL]: (ALVL>69 OR CRAFTALVL>69)
+Alias[VKWARFIST]: (axf OR 9xf OR 7xf)
+Alias[VKAMA]: (am1 OR am2 OR am3 OR am4 OR am5 OR am6 OR am7 OR am8 OR am9 OR ama OR amb OR amc OR amd OR ame OR amf)
+Alias[VKAMASTAG]: (am1 OR am6 OR amb)
+//One-handers: Crystal Sword, War Axe, Flail, War Hammer lines
+Alias[VKWEP1H]: (crs OR 9cr OR 7cr OR wax OR 9wa OR 7wa OR fla OR 9fl OR 7fl OR whm OR 9wh OR 7wh)
+//Bows: Long Bow, Long Battle Bow, Long War Bow lines. Crossbows: Heavy and Repeating Crossbow lines
+Alias[VKWEPBOW]: (lbw OR 8lb OR 6lb OR lbb OR 8l8 OR 6l7 OR lwb OR 8lw OR 6lw OR hxb OR 8hx OR 6hx OR rxb OR 8rx OR 6rx)
+//Two-handers: Giant Sword, Bastard Sword, Flamberge, Great Sword, both Maul lines, Pike line, Battle/Great/Giant Axe lines
+Alias[VKWEP2H]: (gis OR 9gs OR 7gs OR bsw OR 9b9 OR 7b7 OR flb OR 9fb OR 7fb OR gsd OR 9gd OR 7gd OR mau OR 9m9 OR 7m7 OR gma OR 9gm OR 7gm OR pik OR 9p9 OR 7p7 OR btx OR 9bt OR 7bt OR gax OR 9ga OR 7ga OR gix OR 9gi OR 7gi)
+//Javelins: Throwing Spear and Glaive lines
+Alias[VKWEPJAV]: (tsp OR 9ts OR 7ts OR glv OR 9gl OR 7gl)
 
 //SOUNDS EFFECTS
 //Special Items Exclusives
@@ -3194,6 +3208,45 @@ ItemDisplay[jew MAG !ID]: %DOT-9A%%TAN%*%WHITE%*   %NAME%%WHITE%   *%TAN%*%BLUE%
 //Highlight Good Rare items
 ItemDisplay[(jew OR rin OR amu OR CIRC) RARE !ID]: %DOT-A8%%TAN%*%WHITE%*   %NAME%%WHITE%   *%TAN%*%YELLOW%
 
+//==================== VARYK STRICTNESS RULES (S14 Fusion) ====================
+//Every rule in this block only applies at character level 70+. Below that, Kryszard's original rules apply.
+//Recommended (4) and up: other classes' magic class items are hidden (also overrides Kryszard's magic craftable keeps for class items)
+ItemDisplay[MAG !ID GROUND !TOWN FILTLVL>3 ((DRU !DRUID) OR (BAR !BARBARIAN) OR (NEC !NECROMANCER) OR (DIN !PALADIN) OR (SOR !SORCERESS) OR (SIN !ASSASSIN) OR (VKAMA !AMAZON)) CLVL>69]: {%NAME%}
+
+//Strict (6) and up: ethereal rares that are not weapons are hidden (armor, helms, shields, gloves, boots, belts, class armor)
+ItemDisplay[RARE ETH !WEAPON !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//Strict (6) and up: arrows and quivers only for Amazons (unique and set quivers excluded)
+ItemDisplay[QUIVER !AMAZON !UNI !SET GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//Strict (6) and up: rare class items. Shown at item level 70+ only. Own class gets a pin.
+//Claws: War Fist look only. Strict: assassins get a pin, others see it without a pin (ethereal always pinned). Max: ethereal only, every class
+ItemDisplay[VKWARFIST RARE !ID ETH VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%NAME%
+ItemDisplay[VKWARFIST RARE !ID ASSASSIN VKCLASSILVL FILTLVL~6-7 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
+ItemDisplay[VKWARFIST RARE !ID VKCLASSILVL FILTLVL~6-7 CLVL>69]: %NAME%
+ItemDisplay[SIN RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//Pelts and barb helms: own class pinned; other classes see them without a pin on Strict, hidden on Max
+ItemDisplay[((DRU DRUID) OR (BAR BARBARIAN)) RARE !ID VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
+ItemDisplay[(DRU OR BAR) RARE !ID VKCLASSILVL FILTLVL~6-7 CLVL>69]: %NAME%
+ItemDisplay[(DRU OR BAR) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//Necro heads and paladin shields: own class only
+ItemDisplay[((NEC NECROMANCER) OR (DIN PALADIN)) RARE !ID VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
+ItemDisplay[(NEC OR DIN) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//Orbs: own class only. Caster weapons, so no ethereal-only rule on Max
+ItemDisplay[SOR SORCERESS RARE !ID VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
+//Amazon weapons (no Stag/Ashwood/Matriarchal bows): own class only, ethereal only on Max
+ItemDisplay[VKAMA !VKAMASTAG AMAZON RARE !ID VKCLASSILVL FILTLVL>5 (FILTLVL~6-7 OR ETH) CLVL>69]: %DOT-A8%%TIER-7%%NAME%
+ItemDisplay[(SOR OR VKAMA) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//Staves: sorceress only. Caster weapons, so no ethereal pin or ethereal-only rule
+ItemDisplay[STAFF SORCERESS RARE !ID FILTLVL>5 CLVL>69]: %NAME%
+
+//Strict (6) and up: regular rare shields, only the elite 4-socket bases (Monarch, Aegis, Ward). Class shields are handled above
+ItemDisplay[SHIELD !(DIN OR NEC) !(uit OR uow OR uts) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+
+//Strict (6) and up: other rare weapons, only the chosen bases. Ethereal ones get a pin. Max: ethereal only (physical weapons only; orbs and staves are exempt)
+ItemDisplay[(VKWEP1H OR VKWEPBOW OR VKWEP2H OR VKWEPJAV) RARE !ID ETH FILTLVL>5 CLVL>69]: %DOT-A8%%NAME%
+ItemDisplay[(VKWEP1H OR VKWEPBOW OR VKWEP2H OR VKWEPJAV) RARE !ID FILTLVL~6-7 CLVL>69]: %NAME%
+ItemDisplay[WEAPON RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//================== END VARYK STRICTNESS RULES ==================
+
 //Class dependence highlight items
 //Barbarian
 ItemDisplay[(wax OR 9wa OR 7wa OR gix OR 9gi OR 7gi OR btx OR 9bt OR 7bt OR jav OR 9ja OR 7ja OR pil OR 9pi OR 7pi OR ssp OR 9s9 OR 7s7 OR glv OR 9gl OR 7gl OR tsp OR 9ts OR 7ts OR gma OR 9gm OR 7gm OR whm OR 9wh OR 7wh OR mau OR 9m9 OR 7m7 OR pik OR 9p9 OR 7p7 OR gsd OR 9gd OR 7gd OR flb OR 9fb OR 7fb OR bsw OR 9b9 OR 7b7 OR gis OR 9gs OR 7gs OR tax OR 9ta OR 7ta OR 2ax OR 92a OR 72a) BARBARIAN RARE ETH !ID (ALVL>75 OR CRAFTALVL>75)]: %DOT-A8%%NAME%
@@ -3246,8 +3299,8 @@ ItemDisplay[(CHEST OR SHIELD) (MAG OR RARE) !ID (ALVL>74 OR CRAFTALVL>74) MAXSOC
 //Non-Magical 1 sock Craft Bases (3x Square Gem + Socketed NMag Exc/Elite Tier Base -> Magic -> Craft)
 ItemDisplay[(am7 OR am6 OR 8lw OR 8l8 OR 8lb OR 8s8 OR 8cb OR 8lx OR 8mx OR 8hx OR 8rx) AMAZON NMAG SOCK=1 (CLVL<61 AND FILTLVL<6)]: %NAME%
 ItemDisplay[(amc OR amb OR 6lw OR 6l7 OR 6lb OR 6s7 OR 6cb OR 6lx OR 6mx OR 6hx OR 6rx) AMAZON NMAG SOCK=1 (CLVL<80 AND FILTLVL<6)]: %NAME%
-//Magic
-ItemDisplay[(STAFF OR SOR OR WAND OR SCEPTER OR (am5 OR ama OR amf) OR (am2 OR am7 OR amc OR am1 OR am6 OR amb) OR (am3 OR am8 OR amd OR am4 OR am9 OR ame) OR QUIVER OR DRU OR BAR OR NEC OR SIN OR DIN OR (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) OR (DAGGER !THROWING)) MAG !ID FILTLVL<6]: %NAME%
+//Magic (Varyk: class-specific from Recommended (4) up at character level 70+, otherwise from Strict (6) up as before)
+ItemDisplay[(STAFF OR SOR OR WAND OR SCEPTER OR (am5 OR ama OR amf) OR (am2 OR am7 OR amc OR am1 OR am6 OR amb) OR (am3 OR am8 OR amd OR am4 OR am9 OR ame) OR QUIVER OR DRU OR BAR OR NEC OR SIN OR DIN OR (clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) OR (DAGGER !THROWING)) MAG !ID (FILTLVL<4 OR (FILTLVL<6 CLVL<70))]: %NAME%
 ItemDisplay[(wst OR 8ws OR 6ws OR SOR) SORCERESS MAG !ID]: %NAME%
 ItemDisplay[(WAND OR NEC OR (DAGGER !THROWING)) NECROMANCER MAG !ID]: %NAME%
 ItemDisplay[(SCEPTER OR DIN) PALADIN MAG !ID]: %NAME%
