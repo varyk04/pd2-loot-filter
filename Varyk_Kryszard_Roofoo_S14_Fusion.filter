@@ -3217,6 +3217,8 @@ ItemDisplay[MAG !ID GROUND !TOWN FILTLVL>3 ((DRU !DRUID) OR (BAR !BARBARIAN) OR 
 
 //Strict (6) and up: no magic weapons, armor or quivers (this also turns off Kryszard's magic craftable keeps). Magic circlets, rings, amulets, jewels and charms follow Kryszard's rules
 ItemDisplay[MAG !ID (ARMOR OR WEAPON OR QUIVER) !CIRC GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+//Strict (6) and up: no magic rings, amulets or circlets
+ItemDisplay[(rin OR amu OR CIRC) MAG !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: ethereal rares that are not weapons are hidden (armor, helms, shields, gloves, boots, belts, class armor)
 ItemDisplay[RARE ETH !WEAPON !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: arrows and quivers only for Amazons (unique and set quivers excluded)

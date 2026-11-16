@@ -24,7 +24,7 @@ These rules only apply at character level 70 and up. Below that, every level wor
 - Level 7 also hides magic Large Charms.
 - All rare armor, helms, gloves, boots, belts, rings, amulets, circlets and jewels show, except ethereal ones.
 - Regular rare shields: only Monarch, Aegis and Ward (the bases that can roll 4 sockets).
-- Magic weapons, armor and quivers are hidden, including crafting bases. Magic circlets, rings, amulets, jewels and charms still show as in Kryszard's filter.
+- Magic weapons, armor, quivers, rings, amulets and circlets are hidden, including crafting bases. Magic jewels and charms still show as in Kryszard's filter.
 - Ethereal rares that are not weapons are hidden.
 - Arrows and quivers only show for Amazons.
 - Rare class items show at item level 70 and up. Your own class gets a minimap pin. Other classes still see rare pelts, barb helms and War Fist claws, without a pin; all other off-class items are hidden.
@@ -46,7 +46,6 @@ These rules only apply at character level 70 and up. Below that, every level wor
   - Physical rare weapons only show if ethereal. Ethereal War Fist claws show for every class.
   - Sorceress orbs and staves are caster weapons, so they show as on Strict.
   - Other classes' rare pelts, barb helms and War Fists are hidden.
-  - Magic rings, amulets and circlets are hidden, as in Kryszard's filter.
 
 ## Other additions
 - **Season 14:** new maps (The Poisoned Well, The Fortress of Aranoch, The Descent from Mount Arreat), new town areas, new uniques (Spectral Plate, Warriv's Warder) and new runewords (Madness, Finesse, Deception, Jealousy).
