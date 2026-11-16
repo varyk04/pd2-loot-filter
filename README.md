@@ -5,7 +5,7 @@ A Project Diablo 2 Season 14 loot filter. It is [Kryszard's PD2 Loot Filter](htt
 All credit for the original filters goes to Kryszard and Roofoo.
 
 ## Filter levels
-0 Show All, 1 Hide Just Trash, 2 More Notify, 3 More Notify w/o Potions, 4 Recommended, 5 Recommended w/o Potions, 6 Strict, 7 Strict w/o Flawless, 8 Max-Strictness
+0 Show All, 1 Hide Just Trash, 2 More Notify, 3 More Notify w/o Potions, 4 Recommended, 5 Recommended w/o Potions, 6 Strict, 7 Strict w/o Large Charms, 8 Max-Strictness
 
 ## Holy Grail alerts
 - Unidentified uniques and set items you have not discovered yet get a purple `[GRAIL]` tag, a large minimap border, a star pattern and Roofoo's grail sound.
@@ -20,9 +20,11 @@ These rules only apply at character level 70 and up. Below that, every level wor
 - Magic class items only show for your own class: claws, pelts, barb helms, paladin shields, necro wands and heads, sorc orbs, and Amazon weapons and quivers.
 
 **Strict (6 and 7)**
-- Potions: level 6 hides health and mana potions (full and 35% rejuvenation potions still show). Level 7 also hides flawless gems and flawless skulls.
+- Level 6 hides health and mana potions (full and 35% rejuvenation potions still show) and flawless gems and flawless skulls.
+- Level 7 also hides magic Large Charms.
 - All rare armor, helms, gloves, boots, belts, rings, amulets, circlets and jewels show, except ethereal ones.
 - Regular rare shields: only Monarch, Aegis and Ward (the bases that can roll 4 sockets).
+- Magic weapons, armor and quivers are hidden, including crafting bases. Magic circlets, rings, amulets, jewels and charms still show as in Kryszard's filter.
 - Ethereal rares that are not weapons are hidden.
 - Arrows and quivers only show for Amazons.
 - Rare class items show at item level 70 and up. Your own class gets a minimap pin. Other classes still see rare pelts, barb helms and War Fist claws, without a pin; all other off-class items are hidden.

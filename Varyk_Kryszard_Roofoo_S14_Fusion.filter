@@ -15,7 +15,7 @@ ItemDisplayFilterName[]: More Notify - w/o Potions
 ItemDisplayFilterName[]: Recommended
 ItemDisplayFilterName[]: Recommended - w/o Potions
 ItemDisplayFilterName[]: Strict Filter
-ItemDisplayFilterName[]: Strict Filter - w/o Flawless
+ItemDisplayFilterName[]: Strict Filter - w/o Large Charms
 ItemDisplayFilterName[]: Max-Strictness Filter
 
 //Show info about current Filter Level in description of Horadric Cube
@@ -26,8 +26,8 @@ ItemDisplay[box FILTLVL=2]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Setting
 ItemDisplay[box FILTLVL=3]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%3 - %TAN%More Notify %WHITE%- %RED%w/o Potions%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
 ItemDisplay[box FILTLVL=4]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%4 - %TAN%Recommended%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
 ItemDisplay[box FILTLVL=5]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%5 - %TAN%Recommended %WHITE%- %RED%w/o Potions%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=6]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%6 - %ORANGE%Strict Filter %WHITE%- %RED%w/o Potions %WHITE%(Rejuvs still show)%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
-ItemDisplay[box FILTLVL=7]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%7 - %ORANGE%Strict Filter %WHITE%- %RED%w/o Flawless Gems/Skulls%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
+ItemDisplay[box FILTLVL=6]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%6 - %ORANGE%Strict Filter %WHITE%- %RED%w/o Potions and Flawless Gems/Skulls %WHITE%(Rejuvs still show)%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
+ItemDisplay[box FILTLVL=7]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%7 - %ORANGE%Strict Filter %WHITE%- %RED%w/o Large Charms%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
 ItemDisplay[box FILTLVL=8]: %NAME%{%NAME%%NL%%WHITE%You Can Change it in Settings%NL%8 - %RED%Max-Strictness Filter%NL%%TAN% Note%WHITE%: Kryszard's PD2 Loot-Filter level:%NL%}
 
 //DEFINE ALIASES
@@ -3021,11 +3021,11 @@ ItemDisplay[GEMTYPE=7 GEM>3]: %NAME% %ORANGE%[%GRAY%O%ORANGE%]{%NAME%}%CONTINUE%
 ItemDisplay[GEM<3 FILTLVL>0 (DIFF>0 OR FILTLVL>5) !(gzv OR gpv OR glw OR gpw OR glg OR gpg OR glr OR gpr OR glb OR gpb OR gly OR gpy OR skl OR skz)]:{%NAME%}%CONTINUE%
 ItemDisplay[GEM<4 FILTLVL>0 (DIFF>1 OR FILTLVL>5) !(gzv OR gpv OR glw OR gpw OR glg OR gpg OR glr OR gpr OR glb OR gpb OR gly OR gpy OR skl OR skz)]:{%NAME%}%CONTINUE%
 //ping for flawlesses and perfects
-ItemDisplay[(gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) FILTLVL<7]: %DOT-70%%TIER-3%%NAME%{%NAME%}%CONTINUE%
+ItemDisplay[(gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) FILTLVL<6]: %DOT-70%%TIER-3%%NAME%{%NAME%}%CONTINUE%
 ItemDisplay[(gpvs OR gpys OR gpbs OR gpgs OR gprs OR gpws OR skzs)]: %DOT-70%%NAME%{%NAME%}%CONTINUE%
 
-//Hide Flawless Gems and Flawless Skulls on Strict w/o Flawless (7) and Max Strict (8) - S14 merge
-ItemDisplay[(gzv OR gly OR glb OR glg OR glr OR glw OR skl OR gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) !(TOWN OR INVENTORY OR STASH OR CUBE) FILTLVL>6]:{%NAME%}%CONTINUE%
+//Hide Flawless Gems and Flawless Skulls on Strict (6), Strict w/o Large Charms (7) and Max Strict (8) - S14 merge
+ItemDisplay[(gzv OR gly OR glb OR glg OR glr OR glw OR skl OR gzvs OR glys OR glbs OR glgs OR glrs OR glws OR skls) !(TOWN OR INVENTORY OR STASH OR CUBE) FILTLVL>5]:{%NAME%}%CONTINUE%
 //Hide Flawlesses on Max Strict Level
 ItemDisplay[(GEM<5 OR (gzvs OR glys OR glbs OR glgs OR glrs OR glws)) !(skl OR skls) !(TOWN OR INVENTORY OR STASH OR CUBE) FILTLVL>7]:{%NAME%}%CONTINUE%
 
@@ -3040,6 +3040,8 @@ ItemDisplay[GRAILUNI !KRYZBIG]: %BORDER-9B%%PURPLE%*%GOLD%*%PURPLE%*     %NAME% 
 ItemDisplay[GRAILSET]: %BORDER-9B%%PURPLE%*%GREEN%*%PURPLE%*     %NAME%     %PURPLE%*%GREEN%*%PURPLE%*
 
 //All Charms
+//Hide magic Large Charms on Strict w/o Large Charms (7) and Max Strict (8) - S14 merge
+ItemDisplay[cm2 MAG !ID GROUND !TOWN FILTLVL>6]: {%NAME%}
 ItemDisplay[(cm1 OR cm2 OR cm3) MAG !ID]: %DOT-9B%%PURPLE%*%BLUE%   %NAME%   %PURPLE%*
 ItemDisplay[(cm1 OR cm2 OR cm3) UNI !ID]: %PX-68%%NAME%
 
@@ -3213,6 +3215,8 @@ ItemDisplay[(jew OR rin OR amu OR CIRC) RARE !ID]: %DOT-A8%%TAN%*%WHITE%*   %NAM
 //Recommended (4) and up: other classes' magic class items are hidden (also overrides Kryszard's magic craftable keeps for class items)
 ItemDisplay[MAG !ID GROUND !TOWN FILTLVL>3 ((DRU !DRUID) OR (BAR !BARBARIAN) OR (NEC !NECROMANCER) OR (DIN !PALADIN) OR (SOR !SORCERESS) OR (SIN !ASSASSIN) OR (VKAMA !AMAZON)) CLVL>69]: {%NAME%}
 
+//Strict (6) and up: no magic weapons, armor or quivers (this also turns off Kryszard's magic craftable keeps). Magic circlets, rings, amulets, jewels and charms follow Kryszard's rules
+ItemDisplay[MAG !ID (ARMOR OR WEAPON OR QUIVER) !CIRC GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: ethereal rares that are not weapons are hidden (armor, helms, shields, gloves, boots, belts, class armor)
 ItemDisplay[RARE ETH !WEAPON !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: arrows and quivers only for Amazons (unique and set quivers excluded)
