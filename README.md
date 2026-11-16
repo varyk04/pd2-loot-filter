@@ -41,6 +41,21 @@ These rules only apply at character level 70 and up. Below that, every level wor
   - Javelins: Throwing Spear and Glaive lines
   - Daggers, throwing knives and throwing axes are hidden for every class.
 
+**Bases (white and grey items)**
+- Recommended (4 and 5): only good bases, no plain ones.
+  - Elite body armor with enhanced defense.
+  - Elite helms that can roll 3 sockets, with enhanced defense (0 or 3 sockets).
+  - Monarch, Aegis and Ward with enhanced defense.
+  - Paladin shields with 28+ all resist.
+  - Weapons from the rare weapon lines with 15%+ enhanced damage.
+  - Ethereal merc bases (Thresher, Giant Thresher, Cryptic Axe, War Pike and so on), plain is fine.
+  - White items with class skills.
+- Strict (6 and 7): only sellable bases.
+  - Ethereal Sacred Armor, Archon Plate and Shadow Plate with enhanced defense, 0 or 4 sockets.
+  - Demonhead and Bone Visage with 15%+ enhanced defense, 0 or 3 sockets.
+  - Paladin shields with 28+ all resist and enhanced defense, 0 or 4 sockets.
+- Max-Strictness (8): only ethereal Sacred Armor with enhanced defense, 0 or 4 sockets.
+
 **Max-Strictness (8)**
 - Same as Strict, except:
   - Physical rare weapons only show if ethereal. Ethereal War Fist claws show for every class.

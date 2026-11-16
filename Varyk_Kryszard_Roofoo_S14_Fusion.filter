@@ -3041,7 +3041,7 @@ ItemDisplay[GRAILSET]: %BORDER-9B%%PURPLE%*%GREEN%*%PURPLE%*     %NAME%     %PUR
 
 //All Charms
 //Hide magic Large Charms on Strict w/o Large Charms (7) and Max Strict (8) - S14 merge
-ItemDisplay[cm2 MAG !ID GROUND !TOWN FILTLVL>6]: {%NAME%}
+ItemDisplay[cm2 MAG !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>6]: {%NAME%}
 ItemDisplay[(cm1 OR cm2 OR cm3) MAG !ID]: %DOT-9B%%PURPLE%*%BLUE%   %NAME%   %PURPLE%*
 ItemDisplay[(cm1 OR cm2 OR cm3) UNI !ID]: %PX-68%%NAME%
 
@@ -3213,44 +3213,70 @@ ItemDisplay[(jew OR rin OR amu OR CIRC) RARE !ID]: %DOT-A8%%TAN%*%WHITE%*   %NAM
 //==================== VARYK STRICTNESS RULES (S14 Fusion) ====================
 //Every rule in this block only applies at character level 70+. Below that, Kryszard's original rules apply.
 //Recommended (4) and up: other classes' magic class items are hidden (also overrides Kryszard's magic craftable keeps for class items)
-ItemDisplay[MAG !ID GROUND !TOWN FILTLVL>3 ((DRU !DRUID) OR (BAR !BARBARIAN) OR (NEC !NECROMANCER) OR (DIN !PALADIN) OR (SOR !SORCERESS) OR (SIN !ASSASSIN) OR (VKAMA !AMAZON)) CLVL>69]: {%NAME%}
+ItemDisplay[MAG !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>3 ((DRU !DRUID) OR (BAR !BARBARIAN) OR (NEC !NECROMANCER) OR (DIN !PALADIN) OR (SOR !SORCERESS) OR (SIN !ASSASSIN) OR (VKAMA !AMAZON)) CLVL>69]: {%NAME%}
 
 //Strict (6) and up: no magic weapons, armor or quivers (this also turns off Kryszard's magic craftable keeps). Magic circlets, rings, amulets, jewels and charms follow Kryszard's rules
-ItemDisplay[MAG !ID (ARMOR OR WEAPON OR QUIVER) !CIRC GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[MAG !ID (ARMOR OR WEAPON OR QUIVER) !CIRC !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: no magic rings, amulets or circlets
-ItemDisplay[(rin OR amu OR CIRC) MAG !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[(rin OR amu OR CIRC) MAG !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: ethereal rares that are not weapons are hidden (armor, helms, shields, gloves, boots, belts, class armor)
-ItemDisplay[RARE ETH !WEAPON !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[RARE ETH !WEAPON !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: arrows and quivers only for Amazons (unique and set quivers excluded)
-ItemDisplay[QUIVER !AMAZON !UNI !SET GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[QUIVER !AMAZON !UNI !SET !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Strict (6) and up: rare class items. Shown at item level 70+ only. Own class gets a pin.
 //Claws: War Fist look only. Strict: assassins get a pin, others see it without a pin (ethereal always pinned). Max: ethereal only, every class
 ItemDisplay[VKWARFIST RARE !ID ETH VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%NAME%
 ItemDisplay[VKWARFIST RARE !ID ASSASSIN VKCLASSILVL FILTLVL~6-7 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
 ItemDisplay[VKWARFIST RARE !ID VKCLASSILVL FILTLVL~6-7 CLVL>69]: %NAME%
-ItemDisplay[SIN RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[SIN RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Pelts and barb helms: own class pinned; other classes see them without a pin on Strict, hidden on Max
 ItemDisplay[((DRU DRUID) OR (BAR BARBARIAN)) RARE !ID VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
 ItemDisplay[(DRU OR BAR) RARE !ID VKCLASSILVL FILTLVL~6-7 CLVL>69]: %NAME%
-ItemDisplay[(DRU OR BAR) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[(DRU OR BAR) RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Necro heads and paladin shields: own class only
 ItemDisplay[((NEC NECROMANCER) OR (DIN PALADIN)) RARE !ID VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
-ItemDisplay[(NEC OR DIN) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[(NEC OR DIN) RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Orbs: own class only. Caster weapons, so no ethereal-only rule on Max
 ItemDisplay[SOR SORCERESS RARE !ID VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
 //Amazon weapons (no Stag/Ashwood/Matriarchal bows): own class only, ethereal only on Max
 ItemDisplay[VKAMA !VKAMASTAG AMAZON RARE !ID VKCLASSILVL FILTLVL>5 (FILTLVL~6-7 OR ETH) CLVL>69]: %DOT-A8%%TIER-7%%NAME%
-ItemDisplay[(SOR OR VKAMA) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[(SOR OR VKAMA) RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Staves: sorceress only. Caster weapons, so no ethereal pin or ethereal-only rule
 ItemDisplay[STAFF SORCERESS RARE !ID FILTLVL>5 CLVL>69]: %NAME%
 
 //Strict (6) and up: regular rare shields, only the elite 4-socket bases (Monarch, Aegis, Ward). Class shields are handled above
-ItemDisplay[SHIELD !(DIN OR NEC) !(uit OR uow OR uts) RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[SHIELD !(DIN OR NEC) !(uit OR uow OR uts) RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 
 //Strict (6) and up: other rare weapons, only the chosen bases. Ethereal ones get a pin. Max: ethereal only (physical weapons only; orbs and staves are exempt)
 ItemDisplay[(VKWEP1H OR VKWEPBOW OR VKWEP2H OR VKWEPJAV) RARE !ID ETH FILTLVL>5 CLVL>69]: %DOT-A8%%NAME%
 ItemDisplay[(VKWEP1H OR VKWEPBOW OR VKWEP2H OR VKWEPJAV) RARE !ID FILTLVL~6-7 CLVL>69]: %NAME%
-ItemDisplay[WEAPON RARE !ID GROUND !TOWN FILTLVL>5 CLVL>69]: {%NAME%}
+ItemDisplay[WEAPON RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
+
+//BASES (white/grey, non-magic): Recommended = good bases only (no plain ones); Strict = sellable bases; Max = ethereal Sacred Armor only
+//Max-Strictness: ethereal Sacred Armor with enhanced defense, 0 or 4 sockets
+ItemDisplay[uar ETH NMAG !INF !RW ED>0 (SOCK=0 OR SOCK=4) FILTLVL>5 CLVL>69]: %DOT-D6%%NAME%{%NAME%}
+//Strict: ethereal Archon Plate and Shadow Plate with enhanced defense, 0 or 4 sockets
+ItemDisplay[(utp OR uul) ETH NMAG !INF !RW ED>0 (SOCK=0 OR SOCK=4) FILTLVL~6-7 CLVL>69]: %DOT-D6%%NAME%{%NAME%}
+//Strict: Demonhead and Bone Visage with 15%+ enhanced defense, 0 or 3 sockets
+ItemDisplay[(usk OR uh9) NMAG !INF !RW ED>14 (SOCK=0 OR SOCK=3) FILTLVL~6-7 CLVL>69]: %DOT-D6%%NAME%{%NAME%}
+//Strict: paladin shields with 28+ all resist and enhanced defense, 0 or 4 sockets
+ItemDisplay[DIN NMAG !INF !RW RES>27 ED>0 (SOCK=0 OR SOCK=4) FILTLVL~6-7 CLVL>69]: %DOT-D6%%NAME%{%NAME%}
+ItemDisplay[NMAG (ARMOR OR WEAPON) !RW !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
+//Recommended: elite body armor with enhanced defense (Kryszard's sockets: not 1-2)
+ItemDisplay[CHEST ELT NMAG !INF !RW ED>0 !SOCK~1-2 FILTLVL~4-5 CLVL>69]: %DOT-D6%%TIER-5%%NAME%{%NAME%}
+//Recommended: elite helms that can roll 3 sockets, with enhanced defense, 0 or 3 sockets
+ItemDisplay[HELM ELT !(BAR OR DRU) MAXSOCKETS>2 NMAG !INF !RW ED>0 (SOCK=0 OR SOCK=3) FILTLVL~4-5 CLVL>69]: %DOT-D6%%TIER-5%%NAME%{%NAME%}
+//Recommended: Monarch, Aegis, Ward with enhanced defense (not 1-3 sockets)
+ItemDisplay[(uit OR uow OR uts) NMAG !INF !RW ED>0 !SOCK~1-3 FILTLVL~4-5 CLVL>69]: %DOT-D6%%TIER-5%%NAME%{%NAME%}
+//Recommended: paladin shields with 28+ all resist (not 1-3 sockets)
+ItemDisplay[DIN NMAG !INF !RW RES>27 !SOCK~1-3 FILTLVL~4-5 CLVL>69]: %DOT-D6%%TIER-5%%NAME%{%NAME%}
+//Recommended: weapons on the rare weapon lists with 15%+ enhanced damage (not 1 socket)
+ItemDisplay[(VKWEP1H OR VKWEPBOW OR VKWEP2H OR VKWEPJAV) NMAG !INF !RW ED>14 !SOCK=1 FILTLVL~4-5 CLVL>69]: %DOT-D6%%TIER-5%%NAME%{%NAME%}
+//Recommended: ethereal merc bases, plain is fine (Kryszard's lists)
+ItemDisplay[(7wc OR 7pa OR 7s8 OR 7vo OR 7h7 OR 7tr OR 7br OR 7st OR 7o7 OR 7sr) ETH NMAG !INF !RW !SOCK~1-3 FILTLVL~4-5 CLVL>69]: %DOT-D6%%TIER-5%%NAME%{%NAME%}
+ItemDisplay[7p7 ETH NMAG !INF !RW !SOCK=1 FILTLVL~4-5 CLVL>69]: %DOT-D6%%TIER-5%%NAME%{%NAME%}
+//Recommended: white items with class skills and 1-socket Amazon craft bases keep Kryszard's rules; every other plain base is hidden
+ItemDisplay[NMAG (ARMOR OR WEAPON) !RW !(AMASTAFF OR NECSTAFF OR ASNSTAFF OR BARSTAFF OR DRUSTAFF OR PALSTAFF OR SORSTAFF) !(AMAZON SOCK=1) !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL~4-5 CLVL>69]: {%NAME%}
 //================== END VARYK STRICTNESS RULES ==================
 
 //Class dependence highlight items
