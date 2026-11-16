@@ -392,7 +392,7 @@ Alias[KRYZBIG]: (PD2UBERUNI1 OR PD2UBERUNI2 OR PD2GGUNIETH1 OR PD2GGUNI1 OR LODG
 //Special Items Exclusives
 ItemDisplay[neg UNI !ID !TOWN !(GRAILUNI OR GRAILSET)]: %SOUNDID-4699%%NAME%{%NAME%}%CONTINUE% //fallen_warcry_1 - for Sacred Totem "Raaaakanishu!"
 ItemDisplay[jew UNI !ID !TOWN]: %SOUNDID-2669%%NAME%{%NAME%}%CONTINUE% //shrine_gemupgrade - for Rainbow Facet
-ItemDisplay[(uba OR ubaa OR ubab OR ubac) !TOWN]: %SOUNDID-4609%%NAME%{%NAME%}%CONTINUE% //wussie_let_us_out_2 - for Uber Ancients
+ItemDisplay[(uba OR ubaa OR ubab OR ubac) !TOWN]: %SOUNDID-1123%%NAME%{%NAME%}%CONTINUE% //greatermummy_resurrect_1 - for Uber Ancients sigils (was wussie_let_us_out_2)
 ItemDisplay[cm3 UNI !ID !TOWN !(GRAILUNI OR GRAILSET)]: %SOUNDID-3918%%NAME%{%NAME%}%CONTINUE% //gheed_greeting_time_2 - for Gheed's Fortune
 //Runes and Larzuk Puzzlepiece
 ItemDisplay[RUNE>25 !TOWN]: %SOUNDID-418%%NAME%{%NAME%}%CONTINUE% //cairn_success - for HRs 
