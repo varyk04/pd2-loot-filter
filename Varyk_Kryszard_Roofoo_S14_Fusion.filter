@@ -3042,7 +3042,9 @@ ItemDisplay[GRAILSET]: %BORDER-9B%%PURPLE%*%GREEN%*%PURPLE%*     %NAME%     %PUR
 //All Charms
 //Hide magic Large Charms on Strict w/o Large Charms (7) and Max Strict (8) - S14 merge
 ItemDisplay[cm2 MAG !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>6]: {%NAME%}
-ItemDisplay[(cm1 OR cm2 OR cm3) MAG !ID]: %DOT-9B%%PURPLE%*%BLUE%   %NAME%   %PURPLE%*
+//No minimap dot for magic Large Charms on 7 and 8 (Kryszard-style: the dot rule itself is switched off, so a hidden charm cannot leave a dot)
+ItemDisplay[cm2 MAG !ID FILTLVL>6]: %PURPLE%*%BLUE%   %NAME%   %PURPLE%*
+ItemDisplay[(cm1 OR cm3 OR (cm2 FILTLVL<7)) MAG !ID]: %DOT-9B%%PURPLE%*%BLUE%   %NAME%   %PURPLE%*
 ItemDisplay[(cm1 OR cm2 OR cm3) UNI !ID]: %PX-68%%NAME%
 
 //Notes on Charms
