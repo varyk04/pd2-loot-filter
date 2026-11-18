@@ -3240,8 +3240,10 @@ ItemDisplay[((NEC NECROMANCER) OR (DIN PALADIN)) RARE !ID VKCLASSILVL FILTLVL>5 
 ItemDisplay[(NEC OR DIN) RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Orbs: own class only. Caster weapons, so no ethereal-only rule on Max
 ItemDisplay[SOR SORCERESS RARE !ID VKCLASSILVL FILTLVL>5 CLVL>69]: %DOT-A8%%TIER-7%%NAME%
-//Amazon weapons (no Stag/Ashwood/Matriarchal bows): own class only, ethereal only on Max
-ItemDisplay[VKAMA !VKAMASTAG AMAZON RARE !ID VKCLASSILVL FILTLVL>5 (FILTLVL~6-7 OR ETH) CLVL>69]: %DOT-A8%%TIER-7%%NAME%
+//Amazon weapons (no Stag/Ashwood/Matriarchal bows): own class only, ethereal only on Max. Amazon bows (Reflex, Ceremonial, Grand Matron) can't be ethereal, so they also show on Max
+ItemDisplay[VKAMA !VKAMASTAG AMAZON RARE !ID VKCLASSILVL FILTLVL>5 (FILTLVL~6-7 OR ETH OR am2 OR am7 OR amc) CLVL>69]: %DOT-A8%%TIER-7%%NAME%
+//Rare Reflex, Ceremonial and Grand Matron bows: shown for every class at every filter level and character level (Amazons at item level 70+ still get the pin above)
+ItemDisplay[(am2 OR am7 OR amc) RARE !ID]: %NAME%
 ItemDisplay[(SOR OR VKAMA) RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 //Staves: sorceress only. Caster weapons, so no ethereal pin or ethereal-only rule
 ItemDisplay[STAFF SORCERESS RARE !ID FILTLVL>5 CLVL>69]: %NAME%
@@ -3249,9 +3251,10 @@ ItemDisplay[STAFF SORCERESS RARE !ID FILTLVL>5 CLVL>69]: %NAME%
 //Strict (6) and up: regular rare shields, only the elite 4-socket bases (Monarch, Aegis, Ward). Class shields are handled above
 ItemDisplay[SHIELD !(DIN OR NEC) !(uit OR uow OR uts) RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 
-//Strict (6) and up: other rare weapons, only the chosen bases. Ethereal ones get a pin. Max: ethereal only (physical weapons only; orbs and staves are exempt)
+//Strict (6) and up: other rare weapons, only the chosen bases. Ethereal ones get a pin. Max: ethereal only (physical weapons only; orbs and staves are exempt; bows and crossbows can't be ethereal, so they still show on Max)
 ItemDisplay[(VKWEP1H OR VKWEPBOW OR VKWEP2H OR VKWEPJAV) RARE !ID ETH FILTLVL>5 CLVL>69]: %DOT-A8%%NAME%
 ItemDisplay[(VKWEP1H OR VKWEPBOW OR VKWEP2H OR VKWEPJAV) RARE !ID FILTLVL~6-7 CLVL>69]: %NAME%
+ItemDisplay[VKWEPBOW RARE !ID FILTLVL>7 CLVL>69]: %NAME%
 ItemDisplay[WEAPON RARE !ID !(TOWN OR INVENTORY OR STASH OR CUBE OR EQUIPPED OR MERC) FILTLVL>5 CLVL>69]: {%NAME%}
 
 //BASES (white/grey, non-magic): Recommended = good bases only (no plain ones); Strict = sellable bases; Max = ethereal Sacred Armor only

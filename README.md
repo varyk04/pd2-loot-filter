@@ -32,7 +32,7 @@ These rules only apply at character level 70 and up. Below that, every level wor
 - Rare staves: sorceress only.
 - Rare weapons: only these lines (all difficulties, since bases can be upgraded). Ethereal ones get a minimap pin.
   - One-handers: Crystal Sword, War Axe, Flail and War Hammer lines
-  - Bows: Long Bow, Long Battle Bow and Long War Bow lines, plus Reflex, Ceremonial and Grand Matron Bows (Amazon)
+  - Bows: Long Bow, Long Battle Bow and Long War Bow lines, plus Reflex, Ceremonial and Grand Matron Bows (Amazon bows, but shown for every class at every filter level; Amazons also get a pin on Strict and Max at item level 70+)
   - Crossbows: Heavy Crossbow and Repeating Crossbow lines
   - Two-handed swords: Giant Sword, Bastard Sword, Flamberge and Great Sword lines
   - Mauls: Maul and Great Maul lines
@@ -58,7 +58,7 @@ These rules only apply at character level 70 and up. Below that, every level wor
 
 **Max-Strictness (8)**
 - Same as Strict, except:
-  - Physical rare weapons only show if ethereal. Ethereal War Fist claws show for every class.
+  - Physical rare weapons only show if ethereal. Bows and crossbows can't be ethereal, so the chosen bow and crossbow bases still show. Ethereal War Fist claws show for every class.
   - Sorceress orbs and staves are caster weapons, so they show as on Strict.
   - Other classes' rare pelts, barb helms and War Fists are hidden.
 
