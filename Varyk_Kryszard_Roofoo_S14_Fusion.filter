@@ -112,7 +112,7 @@ Alias[NOTIFYSET1]: (((ARMOR OR WEAPON OR QUIVER) (EXC OR ELT OR ci0 OR ba5 OR lb
 
 //NMAG ITEMS WITH ED TO SHOW EXACT ED VALUES 
 //Armors
-Alias[EDARMOR]: ((((CHEST OR (HELM !(BAR OR DRU)) OR (SHIELD !(DIN OR NEC))) ELT) OR (DIN (EXC OR ELT) (RES>19 OR AR>100)) OR (gth OR ful OR aar) OR (xng OR xcl OR xhn OR xrs OR xpl OR xlt OR xld OR xtp) OR ci3 OR xsh OR xpk OR xhm OR (RW ARMOR)) !SOCK=1 !INF SUP NMAG ED>4)
+Alias[EDARMOR]: ((((CHEST OR (HELM !(BAR OR DRU)) OR (SHIELD !(DIN OR NEC))) ELT) OR (DIN (RES>19 OR AR>100)) OR (gth OR ful OR aar) OR (xng OR xcl OR xhn OR xrs OR xpl OR xlt OR xld OR xtp) OR ci3 OR xsh OR xpk OR xhm OR (RW ARMOR)) !SOCK=1 !INF SUP NMAG ED>4)
 //Weapons
 Alias[EDWEAPON]: ((((WEAPON !SIN !SOR !WAND !SCEPTER !STAFF !(clb OR 9cl OR 7cl OR spc OR 9sp OR 7sp) !DAGGER) ELT) OR 8rx OR (RW WEAPON)) !SOCK=1 !INF SUP NMAG ED>4)
 
