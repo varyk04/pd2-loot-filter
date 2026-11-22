@@ -31,8 +31,8 @@ These rules only apply at character level 70 and up. Below that, every level wor
 - Claws: only the War Fist look (Hatchet Hands, Fascia, War Fist).
 - Rare staves: sorceress only.
 - Rare weapons: only these lines (all difficulties, since bases can be upgraded). Ethereal ones get a minimap pin.
-  - One-handers: Crystal Sword, War Axe, Flail and War Hammer lines
-  - Bows: Long Bow, Long Battle Bow and Long War Bow lines, plus Reflex, Ceremonial and Grand Matron Bows (Amazon bows, but shown for every class at every filter level; Amazons also get a pin on Strict and Max at item level 70+)
+  - One-handers: Crystal Sword, War Axe, Flail, War Hammer and Morning Star (Jagged Star, Devil Star) lines
+  - Bows: Long Bow, Long Battle Bow, Short Battle Bow (Short Siege Bow, Diamond Bow) and Long War Bow lines, plus Reflex, Ceremonial and Grand Matron Bows (Amazon bows, but shown for every class at every filter level; Amazons also get a pin on Strict and Max at item level 70+)
   - Crossbows: Heavy Crossbow and Repeating Crossbow lines
   - Two-handed swords: Giant Sword, Bastard Sword, Flamberge and Great Sword lines
   - Mauls: Maul and Great Maul lines

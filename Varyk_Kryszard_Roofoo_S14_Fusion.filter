@@ -393,10 +393,10 @@ Alias[VKCLASSILVL]: (ALVL>69 OR CRAFTALVL>69)
 Alias[VKWARFIST]: (axf OR 9xf OR 7xf)
 Alias[VKAMA]: (am1 OR am2 OR am3 OR am4 OR am5 OR am6 OR am7 OR am8 OR am9 OR ama OR amb OR amc OR amd OR ame OR amf)
 Alias[VKAMASTAG]: (am1 OR am6 OR amb)
-//One-handers: Crystal Sword, War Axe, Flail, War Hammer lines
-Alias[VKWEP1H]: (crs OR 9cr OR 7cr OR wax OR 9wa OR 7wa OR fla OR 9fl OR 7fl OR whm OR 9wh OR 7wh)
-//Bows: Long Bow, Long Battle Bow, Long War Bow lines. Crossbows: Heavy and Repeating Crossbow lines
-Alias[VKWEPBOW]: (lbw OR 8lb OR 6lb OR lbb OR 8l8 OR 6l7 OR lwb OR 8lw OR 6lw OR hxb OR 8hx OR 6hx OR rxb OR 8rx OR 6rx)
+//One-handers: Crystal Sword, War Axe, Flail, War Hammer, Morning Star (Jagged Star/Devil Star) lines
+Alias[VKWEP1H]: (crs OR 9cr OR 7cr OR wax OR 9wa OR 7wa OR fla OR 9fl OR 7fl OR whm OR 9wh OR 7wh OR mst OR 9mt OR 7mt)
+//Bows: Long Bow, Long Battle Bow, Short Battle Bow (Short Siege Bow/Diamond Bow), Long War Bow lines. Crossbows: Heavy and Repeating Crossbow lines
+Alias[VKWEPBOW]: (lbw OR 8lb OR 6lb OR lbb OR 8l8 OR 6l7 OR sbb OR 8s8 OR 6s7 OR lwb OR 8lw OR 6lw OR hxb OR 8hx OR 6hx OR rxb OR 8rx OR 6rx)
 //Two-handers: Giant Sword, Bastard Sword, Flamberge, Great Sword, both Maul lines, Pike line, Battle/Great/Giant Axe lines
 Alias[VKWEP2H]: (gis OR 9gs OR 7gs OR bsw OR 9b9 OR 7b7 OR flb OR 9fb OR 7fb OR gsd OR 9gd OR 7gd OR mau OR 9m9 OR 7m7 OR gma OR 9gm OR 7gm OR pik OR 9p9 OR 7p7 OR btx OR 9bt OR 7bt OR gax OR 9ga OR 7ga OR gix OR 9gi OR 7gi)
 //Javelins: Throwing Spear and Glaive lines
